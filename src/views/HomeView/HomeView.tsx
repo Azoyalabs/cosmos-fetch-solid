@@ -19,6 +19,9 @@ import type { DenomTrace } from "cosmjs-types/ibc/applications/transfer/v1/trans
 import { chains } from "chain-registry";
 import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
 import { fetchCW20Balance, fetchCW721Info } from "@/lib/queries";
+import { IconTooling } from "@/components/icons/IconTooling";
+import { IconCommunity } from "@/components/icons/IconCommunity";
+import { IconEcosystem } from "@/components/icons/IconEcosystem";
 
 export const HomeView = () => {
   const { account, connectToWallet, isConnected } = AppStores.useSignerStore;
@@ -76,7 +79,7 @@ export const HomeView = () => {
             >
               <div>Your connected wallet address is:</div>
 
-              <div class="address">{account().address}</div>
+              <div class="address">{account()!.address}</div>
             </Show>
 
             <div class="mt-2">
@@ -90,7 +93,7 @@ export const HomeView = () => {
           heading={<>Bank Balances</>}
           icon={
             <ExplainContainer.Icon>
-              <IconDocumentation></IconDocumentation>
+              <IconTooling></IconTooling>
             </ExplainContainer.Icon>
           }
         >
@@ -203,7 +206,7 @@ export const HomeView = () => {
           heading={<>Smart contract - Token (CW20)</>}
           icon={
             <ExplainContainer.Icon>
-              <IconDocumentation></IconDocumentation>
+              <IconCommunity></IconCommunity>
             </ExplainContainer.Icon>
           }
         >
@@ -255,7 +258,7 @@ export const HomeView = () => {
           heading={<>Smart contract - NFTs (CW721)</>}
           icon={
             <ExplainContainer.Icon>
-              <IconDocumentation></IconDocumentation>
+              <IconCommunity></IconCommunity>
             </ExplainContainer.Icon>
           }
         >
@@ -320,7 +323,7 @@ export const HomeView = () => {
           heading={<>Ecosystem</>}
           icon={
             <ExplainContainer.Icon>
-              <IconDocumentation></IconDocumentation>
+              <IconEcosystem></IconEcosystem>
             </ExplainContainer.Icon>
           }
         >
